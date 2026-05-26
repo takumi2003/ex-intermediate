@@ -25,12 +25,14 @@ public class Ex01Repository {
 
     /**
      * 全件検索を行う.
+     *
      * @return 野球チームデータのリスト
      */
     public List<baseballTeam> findAll() {
         String sql = """
                 SELECT league_name,team_name,headquarters,inauguration,history
                 FROM teams
+                ORDER BY headquarters
                 ;
                 """;
         return template.query(sql, ROW_MAPPER);
@@ -38,6 +40,7 @@ public class Ex01Repository {
 
     /**
      * 特定のidに紐ずくデータを取得する.
+     *
      * @param id
      * @return idに紐ずく野球チームデータ
      */
