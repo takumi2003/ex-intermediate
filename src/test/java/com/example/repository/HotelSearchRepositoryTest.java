@@ -21,4 +21,10 @@ public class HotelSearchRepositoryTest {
         List<Hotel> hotels = repository.getAll();
         assertEquals(5, hotels.size(), "getAllを用いて取得した数と異なります");
     }
+
+    @Test
+    void 指定された金額以下のホテルを取得する() {
+        List<Hotel> hotels = repository.findByPriceLessThanEqual(10000);
+        assertEquals(3, hotels.size(), "10000円以下のホテルを取得した数が間違っています。");
+    }
 }

@@ -25,4 +25,14 @@ public class HotelSearchRepository {
 
         return param.query(sql, ROW_MAPPER);
     }
+
+    public List<Hotel> findByPriceLessThanEqual(int i) {
+        String sql = """
+                SELECT id,area_name,hotel_name,address,nearest_station,price,parking
+                FROM hotels
+                WHERE price <= 10000
+                ;
+                """;
+        return param.query(sql, ROW_MAPPER);
+    }
 }
