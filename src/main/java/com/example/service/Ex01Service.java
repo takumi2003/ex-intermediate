@@ -27,7 +27,7 @@ public class Ex01Service {
     }
 
     /**
-     * 特定の野球チームの検索を行う
+     * 特定の野球チームの検索を行う.
      *
      * @param id チーム固有のid
      * @return idに紐ずく野球チームのデータ

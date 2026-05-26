@@ -12,7 +12,7 @@
 <h2>発足</h2>
 <span th:text="${team.inauguration}"></span>
 <h2>歴史</h2>
-<span th:text="${team.history}"></span>
+<span th:text="${team.history}" style="white-space: pre-wrap;"></span>
 
 <form action="" th:action="@{/ex01}" method="get">
     <button type="submit">戻る</button>

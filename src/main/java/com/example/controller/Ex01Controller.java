@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 /**
- * Ex01の課題を行うためのコントローラクラス
+ * Ex01の課題を行うためのコントローラクラス.
  *
  * @author takumi kitamura
  */
@@ -21,13 +21,30 @@ public class Ex01Controller {
     @Autowired
     private Ex01Service service;
 
+    /**
+     * デフォルトのページにフォワード.
+     *
+     * @param model リクエストスコープ
+     * @return データが存在する時、index.htmlを表示
+     * @return データが存在しない時、error.htmlを表示
+     */
     @GetMapping("")
-    public String index(baseballTeam baseballTeam, Model model) {
+    public String index(Model model) {
         List<baseballTeam> teams = service.findAll();
+        if(teams.isEmpty()){
+            return "/ex01/error";
+        }
         model.addAttribute("teams", teams);
         return "/ex01/index";
     }
 
+    /**
+     * それぞれの詳細ページを表示するためのフォワード.
+     *
+     * @param id 選択したurlに紐ずくid
+     * @param model リクエストスコープ
+     * @return 詳細ページのhtmlを表示
+     */
     @GetMapping("detail")
     public String detail(Integer id, Model model) {
         baseballTeam team = service.findById(id);
