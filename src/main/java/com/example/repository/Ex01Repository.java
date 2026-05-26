@@ -30,7 +30,7 @@ public class Ex01Repository {
      */
     public List<baseballTeam> findAll() {
         String sql = """
-                SELECT league_name,team_name,headquarters,inauguration,history
+                SELECT id,league_name,team_name,headquarters,inauguration,history
                 FROM teams
                 ORDER BY headquarters
                 ;
@@ -41,12 +41,12 @@ public class Ex01Repository {
     /**
      * 特定のidに紐ずくデータを取得する.
      *
-     * @param id
+     * @param id チームに固有のid
      * @return idに紐ずく野球チームデータ
      */
     public baseballTeam findById(int id) {
         String sql = """
-                SELECT league_name,team_name,headquarters,inauguration,history
+                SELECT id,league_name,team_name,headquarters,inauguration,history
                 FROM teams
                 WHERE id = :id
                 ;

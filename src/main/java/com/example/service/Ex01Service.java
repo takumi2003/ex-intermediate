@@ -19,6 +19,7 @@ public class Ex01Service {
 
     /**
      * 全件検索を行う.
+     *
      * @return 全野球チームのデータ
      */
     public List<baseballTeam> findAll() {
@@ -27,7 +28,8 @@ public class Ex01Service {
 
     /**
      * 特定の野球チームの検索を行う
-     * @param id
+     *
+     * @param id チーム固有のid
      * @return idに紐ずく野球チームのデータ
      */
     public baseballTeam findById(int id) {
