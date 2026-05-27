@@ -14,16 +14,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Transactional
 public class HotelSearchRepositoryTest {
     @Autowired
-    private HotelSearchRepository repository;
+    private HotelRepository repository;
 
     @Test
-    void ホテルを全件取得する() {
-        List<Hotel> hotels = repository.getAll();
-        assertEquals(5, hotels.size(), "getAllを用いて取得した数と異なります");
+    void findAllでホテルを全件取得する() {
+        List<Hotel> hotels = repository.findAll();
+        assertEquals(5, hotels.size(), "findAllを用いて取得した数と異なります");
     }
 
     @Test
-    void 指定された金額以下のホテルを取得する() {
+    void findByPriceLessThanEqualで指定された金額以下のホテルを取得する() {
         List<Hotel> hotels = repository.findByPriceLessThanEqual(10000);
         assertEquals(3, hotels.size(), "10000円以下のホテルを取得した数が間違っています。");
     }

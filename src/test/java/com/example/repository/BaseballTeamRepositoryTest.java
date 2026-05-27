@@ -12,14 +12,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @Transactional
-class Ex01RepositoryTest {
+class BaseballTeamRepositoryTest {
     @Autowired
-    private Ex01Repository ex01Repository;
+    private BaseballTeamRepository ex01Repository;
 
     @Test
     void findAllで全てのデータが取得されている() {
         List<baseballTeam> teams = ex01Repository.findAll();
-
         assertEquals(6, teams.size(), "findAllの取得件数が間違っています");
     }
 

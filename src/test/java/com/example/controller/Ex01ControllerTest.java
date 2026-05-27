@@ -9,7 +9,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
-@WebMvcTest(Ex01Controller.class)
+@WebMvcTest(BaseballTeamController.class)
 class Ex01ControllerTest {
 
     @Autowired

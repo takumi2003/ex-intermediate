@@ -1,7 +1,7 @@
 package com.example.domain;
 
 /**
- * 野球チームを表す.
+ * 野球チームを表すドメイン.
  *
  * @author takumi kitamura
  */

@@ -17,14 +17,14 @@ import java.util.List;
  * @author takumi kitamura
  */
 @Repository
-public class Ex01Repository {
+public class BaseballTeamRepository {
     private static final RowMapper<baseballTeam> ROW_MAPPER = new BeanPropertyRowMapper<>(baseballTeam.class);
 
     @Autowired
     private NamedParameterJdbcTemplate template;
 
     /**
-     * 全件検索を行う.
+     * DBから野球チームのデータを全件取得する.
      *
      * @return 野球チームデータのリスト
      */

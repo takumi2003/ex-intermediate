@@ -1,7 +1,7 @@
 package com.example.controller;
 
 import com.example.domain.baseballTeam;
-import com.example.service.Ex01Service;
+import com.example.service.BaseballTeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,12 +17,12 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/ex01")
-public class Ex01Controller {
+public class BaseballTeamController {
     @Autowired
-    private Ex01Service service;
+    private BaseballTeamService service;
 
     /**
-     * デフォルトのページにフォワード.
+     * デフォルトのページにフォワードする.
      *
      * @param model リクエストスコープ
      * @return データが存在する時、index.htmlを表示
@@ -31,7 +31,7 @@ public class Ex01Controller {
     @GetMapping("")
     public String index(Model model) {
         List<baseballTeam> teams = service.findAll();
-        if(teams.isEmpty()){
+        if (teams.isEmpty()) {
             return "/ex01/error";
         }
         model.addAttribute("teams", teams);
@@ -39,16 +39,15 @@ public class Ex01Controller {
     }
 
     /**
-     * それぞれの詳細ページを表示するためのフォワード.
+     * それぞれの詳細ページにフォワードする.
      *
-     * @param id 選択したurlに紐ずくid
+     * @param id    選択したurlに紐ずくid
      * @param model リクエストスコープ
      * @return 詳細ページのhtmlを表示
      */
-    @GetMapping("detail")
+    @GetMapping("/detail")
     public String detail(Integer id, Model model) {
-        baseballTeam team = service.findById(id);
-        model.addAttribute("team", team);
+        model.addAttribute("team", service.findById(id));
         return "/ex01/detail";
     }
 

@@ -7,10 +7,13 @@
 <body>
 <form action="" th:action="@{/ex02/search}" th:object="${hotelForm}" method="post">
     <h1>ホテル検索</h1>
+    <div th:errors="*{price}" style="color: red"></div>
     <input type="number" name="price" th:value="*{price}" id="price"> <span>円</span>
     <br>
     <button type="submit">検索</button>
 </form>
+
+<span th:if="${message}" th:text="${message}"></span>
 
 <table border="1" th:each="hotel : ${hotels}">
     <tr>

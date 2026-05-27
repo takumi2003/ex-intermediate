@@ -1,7 +1,7 @@
 package com.example.service;
 
 import com.example.domain.baseballTeam;
-import com.example.repository.Ex01Repository;
+import com.example.repository.BaseballTeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +13,9 @@ import java.util.List;
  * @author takumi kitamura
  */
 @Service
-public class Ex01Service {
+public class BaseballTeamService {
     @Autowired
-    private Ex01Repository repository;
+    private BaseballTeamRepository repository;
 
     /**
      * 全件検索を行う.

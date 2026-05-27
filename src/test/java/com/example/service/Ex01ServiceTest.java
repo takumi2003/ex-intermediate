@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Transactional
 class Ex01ServiceTest {
     @Autowired
-    private Ex01Service service;
+    private BaseballTeamService service;
 
     @Test
     void findAllで全てのデータが取得されている() {
